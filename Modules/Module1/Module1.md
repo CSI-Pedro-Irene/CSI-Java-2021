@@ -172,8 +172,8 @@ Select `upstream/main`
 
 What is the difference between Git and GitHub?
 
- - Answer:
-
+ - Answer: i know the diference
+ 
 What is the difference between a git commit and a git push?
 
  - Answer:
