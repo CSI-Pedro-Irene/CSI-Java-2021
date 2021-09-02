@@ -150,32 +150,31 @@ System.out.println("concatenation: " + arr[0] + arr[1] + i);
 
 What is the diference between a Java object and a primitive data type? 
 
- - Answer:
+ - Answer: An object has multiple data blocks and a primitive data type only has one data block.
 
 Describe what an array is in your own words.
 
- - Answer:
+ - Answer: An array acts like a container for one data types.
 
 How do you address an index in an array? Write a code that assigns 34 to a new variable by accessing the value stored in:  
         int[] arr = {4, 3, -1, 4, 34};
 
- - Answer:
+ - Answer: int gay = arr[2];
 
 What is the first index of a list? Why?
 
- - Answer:
+ - Answer: 0 because numbers in java start with 0.
 
 Provide an original example of a null value. It must prove your understanding of the concept.
 
- - Answer:
+ - Answer: int antoniusgay = null;
 
 What part of this instructions was incomplete or unclear?
 
- - Answer:
+ - Answer: It was Clear.
 
 Type down any class notes below this sentence:
-
-
+no
 
 
 Lackluster responses may result in point deductions.
