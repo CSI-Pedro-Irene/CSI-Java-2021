@@ -10,7 +10,7 @@ public class AnimalFarm {
 		animals[1] = new Animal(new Taxonomy("Animalia", "Chordata", "Mammalia", "Rodentia", "Caviidae", "Hydrochoerus", "Hydrochoerus hydrochaeris"),"Capybara", 8, "Hydrochoerus hydrochaeris");
         animals[2] = new Animal(new Taxonomy("Animalia", "Chordata", "Mammalia", "Rodentia", "Caviidae", "Cavia", "Cavia porcellanus" ),"Guinea Pig", 5,"Cavia porcellus" );
 		animals[3] = new Animal(new Taxonomy("Animalia", "Chordata", "Mammalia", "Erinaceomorpha","Erinaceidae", "Erinaceus","	Erinaceus europaeus" ), "Eurpoean hedgehog", 2, "Erinaceus europaeus" );
-
+// What is your favorite tarkov map?
 		System.out.println(animals[0]);
 		System.out.println(animals[1]);
         System.out.println(animals[2]);
