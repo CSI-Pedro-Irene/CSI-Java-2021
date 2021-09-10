@@ -29,11 +29,15 @@ public class Taxonomy {
         this.species = species;
     }
 
-    public Taxonomy() {}
+    public Taxonomy(String string, String string2, String string3, String string4, String string5, String string6, String string7) {}
 
 
 
-    public String getDomain() {
+    public Taxonomy(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getDomain() {
         return domain;
     }
     public void setDomain(String domain) {

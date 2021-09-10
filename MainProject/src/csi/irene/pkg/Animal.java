@@ -30,6 +30,10 @@ public class Animal {
 		this.taxonomy = taxonomy;
 	}
 
+	public Animal(Taxonomy taxonomy2, int age2, String scientificName2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getName() {
 		return name;
 	}
