@@ -29,6 +29,8 @@ public class Taxonomy {
         this.species = species;
     }
 
+public Taxonomy(){
+}
 
 
 
