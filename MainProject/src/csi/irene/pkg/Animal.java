@@ -8,14 +8,14 @@ package csi.irene.pkg;
  *
  */
 public class Animal {
-	static String name;
+	String name;
 	int age;
 	String scientificName;// Getters and Setters
 	Taxonomy taxonomy;
 
 //  Constructors
 	public Animal(String name, int age, String scientificName) {
-		Animal.name = name;
+		this.name = name;
 		this.age = age;
 		this.scientificName = scientificName;
 	}
@@ -24,7 +24,7 @@ public class Animal {
 	}
 
 	public Animal(Taxonomy taxonomy, String name, int age, String scientificName) {
-		Animal.name = name;
+		this.name = name;
 		this.age = age;
 		this.scientificName = scientificName;
 		this.taxonomy = taxonomy;
@@ -39,7 +39,7 @@ public class Animal {
 	}
 
 	public void setName(String name) {
-		Animal.name = name;
+		this.name = name;
 	}
 
 	public int getAge() {
@@ -89,7 +89,7 @@ public class Animal {
 		
 		Animal a2 = new Animal("Kiwi", 25, "Apteryx");
 
-		System.out.println("Name:" + Animal.name);
+		System.out.println("Name:" + this.name);
 		System.out.println("Age:" + a2.age);
 		System.out.println("Scientific Name:" + a2.scientificName);
 		Taxonomy taxonomy = new Taxonomy("Eukaryote", "Animalia", "Chordata", "Mammalia", "Carnivora", "Canidae",
