@@ -16,15 +16,27 @@ public class AnimalFarm {
 				"Erinaceidae", "Erinaceus", "Erinaceus europaeus"), "Eurpoean hedgehog", 2, "Erinaceus europaeus");
 		animals[4] = new Animal("Ring tailed lemur", 16, "Lemur catta");
 		animals[5] = new Animal(new Taxonomy(), "Giraffe", 10, "Giraffa");
- printEachAnimal();
+
+		printAnimals();
+		
+		for(Animal a : animals){
+			  System.out.println(a);
+			}
+		
+		printEachAnimal();
+	
+	
+	
+	
+	
+	
+	
 	}
 
 	// System.out.println(animals[0]);
 	// System.out.println(animals[1]);
 	// System.out.println(animals[2]);
 	// System.out.println(animals[3]);
-
-
 
 	public static void printAnimals() {
 		for (int i = 0; i < animals.length; i++) {
