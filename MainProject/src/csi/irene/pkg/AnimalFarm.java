@@ -19,9 +19,6 @@ public class AnimalFarm {
 
 		printAnimals();
 		
-		for(Animal a : animals){
-			  System.out.println(a);
-			}
 		
 		printEachAnimal();
 	
