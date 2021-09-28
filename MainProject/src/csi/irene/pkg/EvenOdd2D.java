@@ -27,30 +27,24 @@ public class EvenOdd2D {
             for(int j = 0; j < arr[i].length; j++) {
 
 
-                 if(j %2 == 1 && i %2 == 0) {
-                        arr[i][j] = 0;
+                 if(j %2 == 1)
+                if(i %2 == 1) {
+                arr[i][j] = 1;
 
                     }
-
-                else if(j %2 == 0 && i %2 == 0) {
-                            arr[i][j] = 1;
-                        } 
-
-                 if(j %2 == 1 && i %2 == 1 ) {
-                        arr[i][j] = 1;
-
-                    }
-
-                else if(j %2 == 0 && i %2 == 1) {
-                            arr[i][j] = 0;
-                        } 
-
+                else {
+                	if(j %2 ==1) {
+                	arr[i][j] = 1;
+                	
+                	
+                }
+               
             }
             System.out.println(Arrays.toString(arr[i]));
         }
 
 
-    }}
+    }}}
 
 	
 
