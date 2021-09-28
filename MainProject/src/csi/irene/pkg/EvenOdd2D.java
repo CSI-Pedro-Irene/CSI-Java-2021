@@ -28,13 +28,13 @@ public class EvenOdd2D {
 
 
                  if(j %2 == 1)
-                if(i %2 == 1) {
+                if(i %2 == 0) {
                 arr[i][j] = 1;
 
                     }
                 else {
                 	if(j %2 ==1) {
-                	arr[i][j] = 1;
+                	arr[i][j] = 0;
                 	
                 	
                 }
