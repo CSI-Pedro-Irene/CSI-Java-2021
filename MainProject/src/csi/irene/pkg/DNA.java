@@ -8,10 +8,7 @@ public class DNA {
 
 	
         
-				
-				
-				
-				while (true) {
+					while (true) {
 					int[][] arr1 = new int[9][9];
 
 					for (int i1 = 0; i1 < arr1.length; i1++) {
