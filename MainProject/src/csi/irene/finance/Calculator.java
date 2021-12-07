@@ -166,13 +166,13 @@ public class Calculator {
 			// Output year-end review
 			System.out.println("Balance at age: " + age + " is: " + cash + " with a debt of " + debt + " and "
 					+ invested + " invested.");
-
+			
 			// Did you make it?
 			if (age > 30 && cash < 0) {
 				System.out.println("Out of cash. Q bozo!");
 			}
 
-			if (age > 80 && cash > 50_000) {
+			if (age > 79 && cash > 0) {
 				System.out.println("Extraction Completed");
 				break;
 			}
