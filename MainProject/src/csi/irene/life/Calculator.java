@@ -152,6 +152,13 @@ public class Calculator {
 			
 			cash -= payment;
 			}
+			if (age == 40 && cash > 30_000) {
+				double russiaTrip = 10_00;
+				double payment = 0;
+				payment += russiaTrip;
+				
+				cash -= payment;
+			}
 		    
 			
 			
