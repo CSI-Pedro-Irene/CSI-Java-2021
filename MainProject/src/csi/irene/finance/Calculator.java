@@ -5,31 +5,33 @@ import java.util.List;
 
 public class Calculator {
 	public static void main(String[] args) throws InterruptedException {
-		double initial = 2000;
-		double cash = initial;
+		double startingAmount = 1000;
+		double cash = 0.0;
+	    cash += startingAmount;
 		double invested = 0;
-		// int numberOfYears = age;
-		for (int age = 0; age < 82; age++) {
+	    int lifeExpectancy = 81;
+	    
+		for (int age = 0; age < lifeExpectancy; age++) {
+			
 			int numberOfYears = age;
+			 
 			List<Loan> loans = new ArrayList<Loan>();
-			loans.add(new Loan("Student Loans", 0, 0.466, 0, age, numberOfYears));
+			loans.add(new Loan("Student Loans", 0, 0.466, 0, age,numberOfYears));
 			loans.add(new Loan("Personal Loans", 0, 0.16, 0, age, numberOfYears));
 			loans.add(new Loan("Mortgage Loans", 0, 0.3125, 0, age, numberOfYears));
-			loans.add(new Loan("Personal Loan", 0, 0.29, 0, age, numberOfYears));
+			loans.add(new Loan("Credit Card", 0, 0.29, 0, age, numberOfYears));
 
-			// for (int age = 0; age < 82; age++) {
-
-			// highschool
-			if (age <= 18) {
+			// highschool			
+			    if (age <= 18) {
 				String location = "PR";
-				double salary = 0;
+				double salary = 10_000;
 				cash += salary;
 
 			} else if (age <= 23) { //// medschool florida University of Miami
 				String location = "MI";
-				double salary = 17_000;
+				double salary = 17_000 * 0.9;
 				double tuition = 52_000 + 4_000 - 30_066; // poor moment
-				double costofLiving = 9_000; // housing
+				double costofLiving = 14_000; // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 				loans.get(0).principal += tuition;
@@ -37,12 +39,9 @@ public class Calculator {
 				loans.get(0).differed = true;
 			} else if (age <= 27) { // residencia
 				String location = "MI";
-				double salary = 64_000;
+				double salary = 64_000 * 0.9;
 				double tuition = 390;
-				double food = 300 * 12;
-				// double investment = 1000;
-				// double investmentInterest = 0.40;
-				double costofLiving = 25_000;
+				double costofLiving = 54_000;  // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 				loans.get(0).principal += tuition;
@@ -51,12 +50,9 @@ public class Calculator {
 //				debt += -((loanInterest * debt) * 12);
 			} else if (age <= 30) { // specialty
 				String location = "MI";
-				double salary = 63_000;
+				double salary = 80_000 * 0.9;
 				double tuition = 0;
-				double food = 300 * 12;
-				// double investment = 1000;
-				// double investmentInterest = 0.40;
-				double costofLiving = 70_000;
+				double costofLiving = 70_000; // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 
@@ -67,11 +63,8 @@ public class Calculator {
 
 			} else if (age <= 34) { // work
 				String location = "MI";
-				double salary = 340_000;
-				double food = 300 * 12;
-				// double investment = 1000;
-				// double investmentInterest = 0.40;
-				double costofLiving = 100_000;
+				double salary = 340_000 * 0.9;
+				double costofLiving = 260_000; // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 				cash -= costofLiving;
@@ -81,11 +74,10 @@ public class Calculator {
 			} else if (age <= 65) { // retire
 				String location = "MI";
 				// salary is actually my retirement pay
-				double salary = 2_000;
-				double food = 300 * 12;
+				double salary = 2_000 * 0.9;
 				// double investment = 1000;
 				// double investmentInterest = 0.40;
-				double costofLiving = 15_000;
+				double costofLiving = 15_000; // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 				cash += costofLiving;
@@ -93,17 +85,14 @@ public class Calculator {
 			} else if (age <= 82) {
 				// be with the family
 				String location = "MI";
-				double salary = 1_000;
-				double food = 200 * 12;
-				// double investment = 1000;
-				// double investmentInterest = 0.40;
-				double costofLiving = 20_000;
+				double salary = 1_000 * 0.9;
+				double costofLiving = 20_000;  // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
 				cash -= costofLiving;
 			}
 			// Pickop troc
-			// New cars with loan interest are a bad investment!
+			// I be insta buying
 			else if (age == 30 && cash > 30_000) {
 				double newCarPrice = 50_000;
 				double downPayment = newCarPrice * 0.15;
@@ -155,7 +144,7 @@ public class Calculator {
 
 			
 			// Bucket List
-			// Go to the great wall of china and the forbidden city
+			// Go to the great wall of china and the forbidden city (more social credit)
 			if (age == 37 && cash > 20_000) {
 		    double chinaTrip = 5_000;
 		    double payment = 0;
@@ -166,18 +155,7 @@ public class Calculator {
 		    
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+	
 			
 			
 //Calculate Debt Balance

@@ -47,7 +47,7 @@ public class Loan {
 		this.paymentAmount = paymentAmount;
 		this.startAge = startAge;
 		this.numberOfYears = numberOfYears;
-		this.remainingYears = remainingYears;
+	//	this.remainingYears = remainingYears;
 	
 	//this.balance = getTotalPayment;
 	}
