@@ -1,4 +1,4 @@
-package csi.irene.finance;
+package csi.irene.life;
 
 public class Loan {
 
