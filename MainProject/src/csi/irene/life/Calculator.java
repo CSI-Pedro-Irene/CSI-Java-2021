@@ -24,7 +24,7 @@ public class Calculator {
 			// highschool			
 			    if (age <= 18) {
 				String location = "PR";
-				double salary = 10_000;
+				double salary = 0;
 				cash += salary;
 
 			} else if (age <= 23) { //// medschool florida University of Miami
@@ -37,6 +37,7 @@ public class Calculator {
 				loans.get(0).principal += tuition;
 				loans.get(0).principal += costofLiving;
 				loans.get(0).differed = true;
+				
 			} else if (age <= 27) { // residencia
 				String location = "MI";
 				double salary = 64_000 * 0.9;
@@ -48,10 +49,11 @@ public class Calculator {
 				loans.get(0).principal += costofLiving;
 				loans.get(0).differed = true;
 //				debt += -((loanInterest * debt) * 12);
+				
 			} else if (age <= 30) { // specialty
 				String location = "MI";
 				double salary = 80_000 * 0.9;
-				double tuition = 0;
+				double tuition = 500;
 				double costofLiving = 70_000; // food, housing, bills, car stuff, and literally everything.
 
 				cash += salary;
@@ -160,10 +162,6 @@ public class Calculator {
 				cash -= payment;
 			}
 		    
-			
-			
-	
-			
 			
 //Calculate Debt Balance
 			double debt = 0;
