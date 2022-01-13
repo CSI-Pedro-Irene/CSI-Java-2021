@@ -61,13 +61,13 @@ package csi.irene.snake;
 
 	    private void loadImages() {
 
-	        ImageIcon iid = new ImageIcon("src/Resources/Resources/DotSmall3.png");
+	        ImageIcon iid = new ImageIcon("src/Resources/Resources/DotGood.png");
 	        ball = iid.getImage();
 
-	        ImageIcon iia = new ImageIcon("src/Resources/Resources/AppleSmall.png");
+	        ImageIcon iia = new ImageIcon("src/Resources/Resources/GoodApple.png");
 	        apple = iia.getImage();
 
-	        ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadSmall.png");
+	        ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadOrangeGood.png");
 	        head = iih.getImage();
 	    }
 
