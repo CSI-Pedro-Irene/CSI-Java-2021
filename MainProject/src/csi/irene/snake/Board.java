@@ -18,11 +18,11 @@ package csi.irene.snake;
 
 	public class Board extends JPanel implements ActionListener {
 
-	    private final int B_WIDTH = 600;
-	    private final int B_HEIGHT = 600;
-	    private final int DOT_SIZE = 10;
-	    private final int ALL_DOTS = 900;
-	    private final int RAND_POS = 29;
+	    private final int B_WIDTH = 900;
+	    private final int B_HEIGHT = 900;
+	    private final int DOT_SIZE = 50;
+	    private final int ALL_DOTS = 50;
+	    private final int RAND_POS = 10;
 	    private final int DELAY = 140;
 
 	    private final int x[] = new int[ALL_DOTS];
@@ -51,7 +51,7 @@ package csi.irene.snake;
 	    private void initBoard() {
 
 	        addKeyListener(new TAdapter());
-	        setBackground(Color.black);
+	        setBackground(new Color(0,150,150));
 	        setFocusable(true);
 
 	        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
@@ -79,7 +79,7 @@ package csi.irene.snake;
 	            x[z] = 50 - z * 10;
 	            y[z] = 50;
 	        }
-	        
+	         
 	        locateApple();
 
 	        timer = new Timer(DELAY, this);
