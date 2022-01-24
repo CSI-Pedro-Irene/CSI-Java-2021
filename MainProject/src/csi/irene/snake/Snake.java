@@ -2,6 +2,9 @@ package csi.irene.snake;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import javax.swing.text.StyledDocument;
 
 public class Snake extends JFrame {
 
@@ -20,6 +23,9 @@ public class Snake extends JFrame {
 		setTitle("Snake");
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	
+        
 	}
 
 	public static void main(String[] args) {

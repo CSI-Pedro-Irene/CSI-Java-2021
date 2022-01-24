@@ -1,24 +1,27 @@
 package csi.irene.snake;
 
 
-	import java.awt.Color;
-	import java.awt.Dimension;
-	import java.awt.Font;
-	import java.awt.FontMetrics;
-	import java.awt.Graphics;
-	import java.awt.Image;
-	import java.awt.Toolkit;
-	import java.awt.event.ActionEvent;
-	import java.awt.event.ActionListener;
-	import java.awt.event.KeyAdapter;
-	import java.awt.event.KeyEvent;
-	import javax.swing.ImageIcon;
-	import javax.swing.JPanel;
-	import javax.swing.Timer;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 	public class Board extends JPanel implements ActionListener {
 
-	    private final int B_WIDTH = 900;
+	   
+		
+		
+		private final int B_WIDTH = 900;
 	    private final int B_HEIGHT = 900;
 	    private final int DOT_SIZE = 50;
 	    private final int ALL_DOTS = 50;
@@ -27,21 +30,21 @@ package csi.irene.snake;
 
 	    private final int x[] = new int[ALL_DOTS];
 	    private final int y[] = new int[ALL_DOTS];
-
+	   
 	    private int dots;
 	    private int apple_x;
 	    private int apple_y;
-
+        private boolean startOver;
 	    private boolean leftDirection = false;
 	    private boolean rightDirection = true;
 	    private boolean upDirection = false;
 	    private boolean downDirection = false;
 	    private boolean inGame = true;
-
 	    private Timer timer;
 	    private Image ball;
 	    private Image apple;
 	    private Image head;
+	
 
 	    public Board() {
 	        
@@ -72,18 +75,20 @@ package csi.irene.snake;
 	    }
 
 	    private void initGame() {
-
+	    	
 	        dots = 3;
 
 	        for (int z = 0; z < dots; z++) {
 	            x[z] = 50 - z * 10;
 	            y[z] = 50;
+	          
 	        }
 	         
 	        locateApple();
 
 	        timer = new Timer(DELAY, this);
 	        timer.start();
+	        
 	    }
 
 	    @Override
@@ -112,20 +117,37 @@ package csi.irene.snake;
 	        } else {
 
 	            gameOver(g);
+	            startOver(g);
 	        }        
 	    }
 
 	    private void gameOver(Graphics g) {
-	        
+	    	
 	        String msg = "Game Over";
-	        Font small = new Font("Helvetica", Font.BOLD, 14);
+	        Font small = new Font( "ITALIC", Font.ITALIC, 60);
 	        FontMetrics metr = getFontMetrics(small);
 
-	        g.setColor(Color.white);
+	        g.setColor(Color.RED);
 	        g.setFont(small);
 	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 2);
-	    }
+	     	
+	            }
+	
+	    
+	    private void startOver(Graphics g) {
+	  	  
+	        String msg = "Start Over";
+	        Font small = new Font( "ITALIC", Font.ITALIC, 60);
+	        FontMetrics metr = getFontMetrics(small);
 
+	        g.setColor(Color.BLUE);
+	        g.setFont(small);
+	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 4, B_HEIGHT / 4);
+	    
+	    }
+   
+   
+   
 	    private void checkApple() {
 
 	        if ((x[0] == apple_x) && (y[0] == apple_y)) {
@@ -218,30 +240,45 @@ package csi.irene.snake;
 
 	            int key = e.getKeyCode();
 
-	            if ((key == KeyEvent.VK_LEFT) && (!rightDirection)) {
+	      
+	            if ((key == KeyEvent.VK_A) && (!rightDirection)) {
 	                leftDirection = true;
 	                upDirection = false;
 	                downDirection = false;
 	            }
 
-	            if ((key == KeyEvent.VK_RIGHT) && (!leftDirection)) {
+	            if ((key == KeyEvent.VK_D) && (!leftDirection)) {
 	                rightDirection = true;
 	                upDirection = false;
 	                downDirection = false;
 	            }
 
-	            if ((key == KeyEvent.VK_UP) && (!downDirection)) {
+	            if ((key == KeyEvent.VK_W) && (!downDirection)) {
 	                upDirection = true;
 	                rightDirection = false;
 	                leftDirection = false;
 	            }
 
-	            if ((key == KeyEvent.VK_DOWN) && (!upDirection)) {
+	            if ((key == KeyEvent.VK_S) && (!upDirection)) {
 	                downDirection = true;
 	                rightDirection = false;
 	                leftDirection = false;
 	            }
-	        }
-	    }
-	}
-
+	            
+		        if ((key == KeyEvent.VK_ENTER)) {
+		        	inGame = true;
+		        	timer.stop();
+		        	initGame();
+		        	
+		        //	timer = new Timer(DELAY, this);
+			      //  timer.start();
+	                
+	            }
+	        }}
+				    
+			    }
+			    
+	        
+	    
+	
+	
