@@ -20,7 +20,7 @@ import javax.swing.Timer;
 
 	   
 		
-		
+		private int Score;
 		private final int B_WIDTH = 900;
 	    private final int B_HEIGHT = 900;
 	    private final int DOT_SIZE = 50;
@@ -111,20 +111,21 @@ import javax.swing.Timer;
 	                    g.drawImage(ball, x[z], y[z], this);
 	                }
 	            }
-
+	            Score(g);
 	            Toolkit.getDefaultToolkit().sync();
 
 	        } else {
 
 	            gameOver(g);
 	            startOver(g);
+	          
 	        }        
 	    }
 
 	    private void gameOver(Graphics g) {
 	    	
 	        String msg = "Game Over";
-	        Font small = new Font( "ITALIC", Font.ITALIC, 60);
+	        Font small = new Font( "Roman Baselina", Font.ROMAN_BASELINE, 60);
 	        FontMetrics metr = getFontMetrics(small);
 
 	        g.setColor(Color.RED);
@@ -133,19 +134,29 @@ import javax.swing.Timer;
 	     	
 	            }
 	
-	    
-	    private void startOver(Graphics g) {
-	  	  
+         private void startOver(Graphics g) {
+	    	
 	        String msg = "Start Over";
 	        Font small = new Font( "ITALIC", Font.ITALIC, 60);
 	        FontMetrics metr = getFontMetrics(small);
 
 	        g.setColor(Color.BLUE);
 	        g.setFont(small);
-	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 4, B_HEIGHT / 4);
+	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 4);
+	     	
+	            }
+         private void Score(Graphics g) {
+ 	    	
+ 	        String msg = "Score " + Score;
+ 	        Font small = new Font( "Roman", Font.ROMAN_BASELINE, 40);
+ 	        FontMetrics metr = getFontMetrics(small);
+
+ 	        g.setColor(Color.YELLOW);
+ 	        g.setFont(small);
+ 	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 10);
+ 	     	
+ 	            }
 	    
-	    }
-   
    
    
 	    private void checkApple() {
@@ -153,6 +164,7 @@ import javax.swing.Timer;
 	        if ((x[0] == apple_x) && (y[0] == apple_y)) {
 
 	            dots++;
+	            Score++;
 	            locateApple();
 	        }
 	    }
@@ -278,7 +290,8 @@ import javax.swing.Timer;
 			      //  timer.start();
 	                
 	            }
-	        }}
+	        }
+	        }
 				    
 			    }
 			    
