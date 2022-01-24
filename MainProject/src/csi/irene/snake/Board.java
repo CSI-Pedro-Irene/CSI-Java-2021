@@ -269,6 +269,10 @@ import javax.swing.Timer;
 		        	inGame = true;
 		        	timer.stop();
 		        	initGame();
+		        	downDirection = false;
+	                rightDirection = true;
+	                leftDirection = false;
+	                upDirection = false;
 		        	
 		        //	timer = new Timer(DELAY, this);
 			      //  timer.start();
