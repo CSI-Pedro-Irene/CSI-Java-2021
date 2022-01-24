@@ -75,7 +75,7 @@ import javax.swing.Timer;
 	        
 	        ImageIcon iib = new ImageIcon("src/Resources/Resources/ballin-drip.gif");
 	        background = iib.getImage();
-	        ImageIcon iic = new ImageIcon("src/Resources/Resources/Hnet.com-image.png");
+	        ImageIcon iic = new ImageIcon("src/Resources/Resources/CatoDrip.gif");
 	        background2 = iic.getImage();
 	        
 	    }
@@ -164,9 +164,9 @@ import javax.swing.Timer;
  	        Font small = new Font( "Roman", Font.ROMAN_BASELINE, 40);
  	        FontMetrics metr = getFontMetrics(small);
 
- 	        g.setColor(Color.YELLOW);
+ 	        g.setColor(Color.BLACK);
  	        g.setFont(small);
- 	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 10);
+ 	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 13);
  	     	
  	            }
 	    
