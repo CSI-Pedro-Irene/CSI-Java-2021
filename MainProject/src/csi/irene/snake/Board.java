@@ -20,13 +20,13 @@ import javax.swing.Timer;
 
 	   
 		
-		private int Score;
+		private int  Score = 0;
 		private final int B_WIDTH = 900;
 	    private final int B_HEIGHT = 900;
 	    private final int DOT_SIZE = 50;
 	    private final int ALL_DOTS = 50;
 	    private final int RAND_POS = 10;
-	    private final int DELAY = 140;
+	    private final int DELAY = 100;
 
 	    private final int x[] = new int[ALL_DOTS];
 	    private final int y[] = new int[ALL_DOTS];
@@ -44,8 +44,8 @@ import javax.swing.Timer;
 	    private Image ball;
 	    private Image apple;
 	    private Image head;
-	
-
+	   private Image background;
+	   private Image background2;
 	    public Board() {
 	        
 	        initBoard();
@@ -72,6 +72,12 @@ import javax.swing.Timer;
 
 	        ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadOrangeGood.png");
 	        head = iih.getImage();
+	        
+	        ImageIcon iib = new ImageIcon("src/Resources/Resources/ballin-drip.gif");
+	        background = iib.getImage();
+	        ImageIcon iic = new ImageIcon("src/Resources/Resources/Hnet.com-image.png");
+	        background2 = iic.getImage();
+	        
 	    }
 
 	    private void initGame() {
@@ -94,16 +100,17 @@ import javax.swing.Timer;
 	    @Override
 	    public void paintComponent(Graphics g) {
 	        super.paintComponent(g);
-
+	       g.drawImage(background, 0, 0, null );
+	       g.drawImage(background2, 0, 0, null);
 	        doDrawing(g);
 	    }
 	    
 	    private void doDrawing(Graphics g) {
 	        
 	        if (inGame) {
-
+               
 	            g.drawImage(apple, apple_x, apple_y, this);
-
+          
 	            for (int z = 0; z < dots; z++) {
 	                if (z == 0) {
 	                    g.drawImage(head, x[z], y[z], this);
@@ -121,6 +128,12 @@ import javax.swing.Timer;
 	          
 	        }        
 	    }
+	    
+	    	
+
+	    	
+	    	
+	    
 
 	    private void gameOver(Graphics g) {
 	    	
@@ -147,7 +160,7 @@ import javax.swing.Timer;
 	            }
          private void Score(Graphics g) {
  	    	
- 	        String msg = "Score " + Score;
+ 	        String msg = "Score " + Score ;
  	        Font small = new Font( "Roman", Font.ROMAN_BASELINE, 40);
  	        FontMetrics metr = getFontMetrics(small);
 
@@ -281,6 +294,7 @@ import javax.swing.Timer;
 		        	inGame = true;
 		        	timer.stop();
 		        	initGame();
+		        	Score=0;
 		        	downDirection = false;
 	                rightDirection = true;
 	                leftDirection = false;
