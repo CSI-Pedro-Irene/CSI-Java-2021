@@ -76,7 +76,7 @@ import javax.swing.Timer;
 	        ImageIcon iib = new ImageIcon("src/Resources/Resources/ballin-drip.gif");
 	        background = iib.getImage();
 	        ImageIcon iic = new ImageIcon("src/Resources/Resources/CatoDrip.gif");
-	        background2 = iic.getImage();
+            background2 = iic.getImage();
 	        
 	    }
 
