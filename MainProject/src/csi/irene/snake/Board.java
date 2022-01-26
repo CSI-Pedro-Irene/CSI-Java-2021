@@ -64,20 +64,20 @@ import javax.swing.Timer;
 
 	    private void loadImages() {
 
-	        ImageIcon iid = new ImageIcon("src/Resources/Resources/DotGood.png");
+	        ImageIcon iid = new ImageIcon("src/Resources/Resources/ResizedBody.png");
 	        ball = iid.getImage();
 
-	        ImageIcon iia = new ImageIcon("src/Resources/Resources/GoodApple.png");
+	        ImageIcon iia = new ImageIcon("src/Resources/Resources/WeightsDrippin.png");
 	        apple = iia.getImage();
 
-	        ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadOrangeGood.png");
+	        ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadMan.png");
 	        head = iih.getImage();
 	        
-	        ImageIcon iib = new ImageIcon("src/Resources/Resources/ballin-drip.gif");
+	       ImageIcon iib = new ImageIcon("src/Resources/Resources/Do.png");
 	        background = iib.getImage();
 	        ImageIcon iic = new ImageIcon("src/Resources/Resources/CatoDrip.gif");
             background2 = iic.getImage();
-	        
+//	        
 	    }
 
 	    private void initGame() {
@@ -100,9 +100,16 @@ import javax.swing.Timer;
 	    @Override
 	    public void paintComponent(Graphics g) {
 	        super.paintComponent(g);
-	       g.drawImage(background, 0, 0, null );
+	       
 	       g.drawImage(background2, 0, 0, null);
 	        doDrawing(g);
+	        
+	        if (!inGame) {
+	            timer.stop();
+	        	g.drawImage(background, 0, 0, null );
+	        	 doDrawing(g);
+	        	
+	        }	        
 	    }
 	    
 	    private void doDrawing(Graphics g) {
@@ -145,6 +152,8 @@ import javax.swing.Timer;
 	        g.setFont(small);
 	        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 2);
 	     	
+	        
+	        
 	            }
 	
          private void startOver(Graphics g) {
