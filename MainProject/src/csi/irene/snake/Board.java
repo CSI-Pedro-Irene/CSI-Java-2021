@@ -45,8 +45,8 @@ public class Board extends JPanel implements ActionListener {
 	private Image head;
 	private Image background;
 	private Image background2;
-    private Image Mine;
-	
+	private Image Mine;
+
 	public Board() {
 
 		initBoard();
@@ -68,7 +68,7 @@ public class Board extends JPanel implements ActionListener {
 		ImageIcon iid = new ImageIcon("src/Resources/Resources/ResizedBody.png");
 		ball = iid.getImage();
 
-		ImageIcon iia = new ImageIcon("src/Resources/Resources/WeightsDrippin.png");
+		ImageIcon iia = new ImageIcon("src/Resources/Resources/Dombel.png");
 		apple = iia.getImage();
 
 		ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadMan.png");
@@ -80,8 +80,8 @@ public class Board extends JPanel implements ActionListener {
 		background2 = iic.getImage();
 
 		ImageIcon iie = new ImageIcon("src/Resources/Resources/Mine.png");
-		Mine = iie.getImage();		
-		
+		Mine = iie.getImage();
+
 	}
 
 	private void initGame() {
@@ -95,7 +95,7 @@ public class Board extends JPanel implements ActionListener {
 		}
 
 		locateApple();
-        locateMine();
+		locateMine();
 		timer = new Timer(DELAY, this);
 		timer.start();
 
@@ -128,7 +128,7 @@ public class Board extends JPanel implements ActionListener {
 				} else {
 					g.drawImage(ball, x[z], y[z], this);
 				}
-			//	g.drawImage(Mine, Mine_x, Mine_y, this);
+				// g.drawImage(Mine, Mine_x, Mine_y, this);
 
 			}
 			Score(g);
@@ -187,19 +187,17 @@ public class Board extends JPanel implements ActionListener {
 			locateApple();
 		}
 	}
+
 	private void checkMine() {
-   
+
 		if ((x[0] == Mine_x) && (y[0] == Mine_y)) {
-          inGame = false;
+			inGame = false;
 			locateMine();
-		  	timer.stop();
-			
+			timer.stop();
 
 		}
 	}
 
-	
-	
 	private void move() {
 
 		for (int z = dots; z > 0; z--) {
@@ -223,8 +221,7 @@ public class Board extends JPanel implements ActionListener {
 			y[0] += DOT_SIZE;
 		}
 	}
-	
-	
+
 	private void checkCollision() {
 
 		for (int z = dots; z > 0; z--) {
@@ -255,8 +252,6 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	
-	
 	private void locateApple() {
 
 		int r = (int) (Math.random() * RAND_POS);
@@ -274,6 +269,7 @@ public class Board extends JPanel implements ActionListener {
 		e = (int) (Math.random() * RAND_POS);
 		Mine_y = ((e * DOT_SIZE));
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -282,15 +278,13 @@ public class Board extends JPanel implements ActionListener {
 			checkApple();
 			checkCollision();
 			move();
-			
+
 			checkMine();
-			
+
 		}
 
 		repaint();
 	}
-
-	
 
 	private class TAdapter extends KeyAdapter {
 
