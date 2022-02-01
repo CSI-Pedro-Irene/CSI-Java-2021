@@ -177,7 +177,7 @@ public class Board extends JPanel implements ActionListener {
 
 	private void Score(Graphics g) {
 
-		String msg = "Dungeon" + Score;
+		String msg = "Dungeon " + Score;
 		Font small = new Font("Roman", Font.ROMAN_BASELINE, 40);
 		FontMetrics metr = getFontMetrics(small);
 
