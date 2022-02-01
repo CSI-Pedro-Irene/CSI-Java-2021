@@ -68,26 +68,29 @@ public class Board extends JPanel implements ActionListener {
 
 	private void loadImages() {
 
-		ImageIcon iid = new ImageIcon("src/Resources/Resources/Level.png");
+		ImageIcon iid = new ImageIcon(getClass().getResource("Level.png"));
 		ball = iid.getImage();
 
-		ImageIcon iia = new ImageIcon("src/Resources/Resources/Chest.png");
+		ImageIcon iia = new ImageIcon(getClass().getResource("Chest.png"));
 		apple = iia.getImage();
 
-		ImageIcon iih = new ImageIcon("src/Resources/Resources/DarkSouls.png");
+		ImageIcon iih = new ImageIcon(getClass().getResource("DarkSouls.png"));
 		head = iih.getImage();
 
-		ImageIcon iib = new ImageIcon("src/Resources/Resources/Do.png");
+		ImageIcon iib = new ImageIcon(getClass().getResource("Do.png"));
 		background = iib.getImage();
-		ImageIcon iic = new ImageIcon("src/Resources/Resources/Dungeon.png");
+		ImageIcon iic = new ImageIcon(getClass().getResource("Dungeon.png"));
 		background2 = iic.getImage();
 
-		ImageIcon iie = new ImageIcon("src/Resources/Resources/Enemy.png");
+		ImageIcon iie = new ImageIcon(getClass().getResource("Enemy.png"));
 		Mine = iie.getImage();
 		
-		ImageIcon iif = new ImageIcon("src/Resources/Resources/Enemy.png");
+		ImageIcon iif = new ImageIcon(getClass().getResource("Enemy.png"));
 		Mine = iif.getImage();
-
+		
+		
+		
+		
 	}
 
 	private void initGame() {
@@ -181,7 +184,7 @@ public class Board extends JPanel implements ActionListener {
 		Font small = new Font("Roman", Font.ROMAN_BASELINE, 40);
 		FontMetrics metr = getFontMetrics(small);
 
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.setFont(small);
 		g.drawString(msg, (B_WIDTH - metr.stringWidth(msg)) / 2, B_HEIGHT / 13);
 
@@ -342,7 +345,8 @@ public class Board extends JPanel implements ActionListener {
 
 				// timer = new Timer(DELAY, this);
 				// timer.start();
-
+				
+				
 			}
 		}
 	}
