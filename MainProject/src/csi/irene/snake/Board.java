@@ -33,6 +33,8 @@ public class Board extends JPanel implements ActionListener {
 	private int apple_y;
 	private int Mine_x;
 	private int Mine_y;
+	private int Mine2_x;
+	private int Mine2_y;
 	private boolean startOver;
 	private boolean leftDirection = false;
 	private boolean rightDirection = true;
@@ -46,6 +48,7 @@ public class Board extends JPanel implements ActionListener {
 	private Image background;
 	private Image background2;
 	private Image Mine;
+	private Image Mine2;
 
 	public Board() {
 
@@ -65,22 +68,25 @@ public class Board extends JPanel implements ActionListener {
 
 	private void loadImages() {
 
-		ImageIcon iid = new ImageIcon("src/Resources/Resources/ResizedBody.png");
+		ImageIcon iid = new ImageIcon("src/Resources/Resources/Level.png");
 		ball = iid.getImage();
 
-		ImageIcon iia = new ImageIcon("src/Resources/Resources/Dombel.png");
+		ImageIcon iia = new ImageIcon("src/Resources/Resources/Chest.png");
 		apple = iia.getImage();
 
-		ImageIcon iih = new ImageIcon("src/Resources/Resources/HeadMan.png");
+		ImageIcon iih = new ImageIcon("src/Resources/Resources/DarkSouls.png");
 		head = iih.getImage();
 
 		ImageIcon iib = new ImageIcon("src/Resources/Resources/Do.png");
 		background = iib.getImage();
-		ImageIcon iic = new ImageIcon("src/Resources/Resources/Gym.png");
+		ImageIcon iic = new ImageIcon("src/Resources/Resources/Dungeon.png");
 		background2 = iic.getImage();
 
-		ImageIcon iie = new ImageIcon("src/Resources/Resources/Mine.png");
+		ImageIcon iie = new ImageIcon("src/Resources/Resources/Enemy.png");
 		Mine = iie.getImage();
+		
+		ImageIcon iif = new ImageIcon("src/Resources/Resources/Enemy.png");
+		Mine = iif.getImage();
 
 	}
 
@@ -96,6 +102,7 @@ public class Board extends JPanel implements ActionListener {
 
 		locateApple();
 		locateMine();
+		
 		timer = new Timer(DELAY, this);
 		timer.start();
 
@@ -128,13 +135,15 @@ public class Board extends JPanel implements ActionListener {
 				} else {
 					g.drawImage(ball, x[z], y[z], this);
 				}
-				// g.drawImage(Mine, Mine_x, Mine_y, this);
-
+				 g.drawImage(Mine, Mine_x, Mine_y, this);
+				
 			}
 			Score(g);
 			Toolkit.getDefaultToolkit().sync();
-			g.drawImage(Mine, Mine_x, Mine_y, this);
-		} else {
+			g.drawImage(Mine2, Mine2_x, Mine2_y, this);
+		}
+		
+		else {
 
 			gameOver(g);
 			startOver(g);
@@ -168,7 +177,7 @@ public class Board extends JPanel implements ActionListener {
 
 	private void Score(Graphics g) {
 
-		String msg = "Score " + Score;
+		String msg = "Dungeon" + Score;
 		Font small = new Font("Roman", Font.ROMAN_BASELINE, 40);
 		FontMetrics metr = getFontMetrics(small);
 
@@ -197,6 +206,10 @@ public class Board extends JPanel implements ActionListener {
 
 		}
 	}
+	
+		
+		
+	
 
 	private void move() {
 
@@ -280,7 +293,7 @@ public class Board extends JPanel implements ActionListener {
 			move();
 
 			checkMine();
-
+            
 		}
 
 		repaint();
