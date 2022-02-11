@@ -36,7 +36,6 @@ public class Dog {
 			this.smelly = smelly;
 			this.color = color;
 		}
-
 	}
 
 	public class Food {

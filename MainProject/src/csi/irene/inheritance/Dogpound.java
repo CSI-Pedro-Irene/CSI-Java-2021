@@ -1,5 +1,12 @@
 package csi.irene.inheritance;
 
-public class Dogpound {
+import java.awt.Graphics;
+import java.awt.Toolkit;
+
+import javax.swing.JPanel;
+
+public class Dogpound extends JPanel{
+
+	
 
 }
