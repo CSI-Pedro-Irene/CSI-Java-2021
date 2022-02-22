@@ -3,13 +3,14 @@ package csi.irene.inheritance;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
-public class Dog {
+public class Dog extends JPanel {
 
-	String Hair;
-	int Size;
+	String hair;
+	int size;
 	Boolean wild = true;
-	boolean Gender = true;
+	boolean gender = true; // true = male
 	ImageIcon icon;
 
 	public Dog() {
@@ -17,20 +18,20 @@ public class Dog {
 
 	public Dog(String hair, int size, Boolean wild, boolean gender, String directory) {
 		super();
-		Hair = hair;
-		Size = size;
+		this.hair = hair;
+		this.size = size;
 		this.wild = wild;
-		Gender = gender;
-	   this.icon = new ImageIcon(getClass().getResource("src/csi/irene/inheritance/Picturas/MediumCorgi.png"));
+		this.gender = gender;
+		this.icon = new ImageIcon((new ImageIcon(getClass().getResource(directory))).getImage().getScaledInstance(60, 60,  java.awt.Image.SCALE_SMOOTH));  // transform it back
 	}
 
 	public class Shit {
 
-		String size;
+		int size;
 		boolean smelly;
 		String color;
 
-		public Shit(String size, boolean smelly, String color) {
+		public Shit(boolean smelly, int size, String color) {
 			super();
 			this.size = size;
 			this.smelly = smelly;
@@ -42,6 +43,11 @@ public class Dog {
 		boolean moist;
 		boolean musty;
 		boolean bad;
+
+		public Shit digest() {
+
+			return new Shit(bad, size, hair);
+		}
 
 		public Food(boolean moist, boolean musty, boolean bad) {
 			super();
@@ -65,20 +71,38 @@ public class Dog {
 	}
 
 	public void piss() {
-		if (Gender == true) {
+		if (gender == true) {
 			System.out.println("Raise leg");
 		}
 
 		System.out.println("piss sounds");
 	}
 
-	Shit eat(Food f)
+	Shit eat(Food f) {
 
-	{
-		return null;
+		return f.digest();
 	}
 
 	void Die() {
+	}
+	public class Noise {
+		int decibels;
+		boolean recurring;
+		
+		
+		public Noise() {
+			
+		}
+
+
+		public Noise(int decibels, boolean recurring) {
+			super();
+			this.decibels = decibels;
+			this.recurring = recurring;
+		}
+		
+		
+		
 	}
 
 	Noise Bark() {
@@ -96,4 +120,5 @@ public class Dog {
 	public void Mate(Dog D) {
 	}
 
+	
 }
