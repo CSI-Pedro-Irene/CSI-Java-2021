@@ -236,6 +236,12 @@ public class Board extends JPanel implements ActionListener {
 		if (downDirection) {
 			y[0] += DOT_SIZE;
 		}
+		
+//		random
+//		ld
+//		rd
+//		ud
+//		dd
 	}
 
 	private void checkCollision() {

@@ -22,7 +22,7 @@ public class Dog extends JPanel {
 		this.size = size;
 		this.wild = wild;
 		this.gender = gender;
-		this.icon = new ImageIcon((new ImageIcon(getClass().getResource(directory))).getImage().getScaledInstance(60, 60,  java.awt.Image.SCALE_SMOOTH));  // transform it back
+		this.icon = new ImageIcon((new ImageIcon(getClass().getResource(directory))).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));  // transform it back
 	}
 
 	public class Shit {
