@@ -17,12 +17,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import csi.irene.inheritance.Dog.Food;
 import csi.irene.life.Loan;
 import csi.irene.pkg.Animal;
 
 public class Dogpound extends JPanel implements ActionListener {
 
 	List<Dog> dog = new ArrayList<Dog>();
+	List<Food> food = new ArrayList<Food>();
 
 	private int corgi;
 	private int B_WIDTH = 700;
@@ -58,7 +60,10 @@ public class Dogpound extends JPanel implements ActionListener {
 		setFocusable(true);
 
 		setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+		locateFood();
+		findFood();
 		initGame();
+
 
 	}
 
@@ -102,23 +107,21 @@ public class Dogpound extends JPanel implements ActionListener {
 		Random rd = new Random();
 		Random rand = new Random();
 
-		int randomNum = rand.nextInt((50 - 3) + 3) + 3;
-	
+		int randomNum = rand.nextInt((40 - 2) + 1) + 3;
 
-	 	if (count % randomNum == 2	) {
+		if (count % randomNum == 2) {
 			upDirection = rd.nextBoolean();
 			rightDirection = rd.nextBoolean();
 			leftDirection = rd.nextBoolean();
 			downDirection = rd.nextBoolean();
 		}
 
-
 	}
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-		super.paintComponent(g);
+//		super.paintComponent(g);
 
 		doDrawing(g);
 
@@ -126,16 +129,15 @@ public class Dogpound extends JPanel implements ActionListener {
 
 	private void doDrawing(Graphics g) {
 
-		if (isRunning) {
-			for (int z = 0; z < corgi; z++) {
-				if (z == 0) {
-					g.drawImage(dog.get(0).icon.getImage(), x[z], y[z], this);
-
-				}
-			}
-
-			Toolkit.getDefaultToolkit().sync();
+		for (Food f : food) {
+			g.drawImage(f.icon.getImage(), f.food_x, f.food_y, this);
 		}
+
+		for (int z = 0; z < corgi; z++) {
+			g.drawImage(dog.get(z).icon.getImage(), x[z], y[z], this);
+		}
+
+		Toolkit.getDefaultToolkit().sync();
 	}
 
 	private void checkCollision() {
@@ -224,11 +226,39 @@ public class Dogpound extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		if (isRunning) {
-			checkCollision();
-			move();
+		checkCollision();
+		move();
+
+		if(food.size()<10) {
+			locateFood();
+			findFood();
 		}
+
 		repaint();
+	}
+
+	private void locateFood() {
+		Random rd = new Random();
+//    	isBomb = false;
+		int b = (int) (Math.random() * 50);
+		int food_x = ((b * DOG_SIZE));
+
+		b = (int) (Math.random() * 50);
+		int food_y = ((b * DOG_SIZE));
+
+		food.add(new Dog().new Food(food_x, food_y));
+
+	}
+
+	private void findFood() {
+
+		for (Food f : food) {
+
+			if ((x[0] == f.food_x) && (y[0] == f.food_y)) {
+
+			}
+		}
+
 	}
 
 }
