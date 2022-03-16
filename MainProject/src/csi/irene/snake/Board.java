@@ -348,13 +348,12 @@ public class Board extends JPanel implements ActionListener {
 				rightDirection = true;
 				leftDirection = false;
 				upDirection = false;
-
-				// timer = new Timer(DELAY, this);
-				// timer.start();
+			}
+				
 				
 				
 			}
 		}
 	}
 
-}
+

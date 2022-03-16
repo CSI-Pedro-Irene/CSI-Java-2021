@@ -61,7 +61,6 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
 		locateFood();
-		findFood();
 		initGame();
 
 
@@ -145,7 +144,8 @@ public class Dogpound extends JPanel implements ActionListener {
 		for (int z = corgi; z > 0; z--) {
 
 			if ((z > 4) && (x[0] == x[z]) && (y[0] == y[z])) {
-				isRunning = false;
+			
+				
 			}
 		}
 		Random rd = new Random();
@@ -182,47 +182,10 @@ public class Dogpound extends JPanel implements ActionListener {
 			rightDirection = rd.nextBoolean();
 		}
 
-		if (!isRunning) {
-			timer.stop();
-		}
 	}
+	
 
-	private class TAdapter extends KeyAdapter {
-
-		@Override
-		public void keyPressed(KeyEvent e) {
-
-			int key = e.getKeyCode();
-
-			if ((key == KeyEvent.VK_S) && (!upDirection)) {
-				downDirection = true;
-				rightDirection = false;
-				leftDirection = false;
-			}
-
-			if ((key == KeyEvent.VK_A) && (!rightDirection)) {
-				leftDirection = true;
-				upDirection = false;
-				downDirection = false;
-			}
-
-			if ((key == KeyEvent.VK_D) && (!leftDirection)) {
-				rightDirection = true;
-				upDirection = false;
-				downDirection = false;
-			}
-
-			if ((key == KeyEvent.VK_W) && (!downDirection)) {
-				upDirection = true;
-				rightDirection = false;
-				leftDirection = false;
-			}
-			if ((key == KeyEvent.VK_ENTER && (!isRunning))) {
-
-			}
-		}
-	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -231,7 +194,7 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		if(food.size()<10) {
 			locateFood();
-			findFood();
+			
 		}
 
 		repaint();
@@ -239,7 +202,7 @@ public class Dogpound extends JPanel implements ActionListener {
 
 	private void locateFood() {
 		Random rd = new Random();
-//    	isBomb = false;
+
 		int b = (int) (Math.random() * 50);
 		int food_x = ((b * DOG_SIZE));
 
@@ -255,10 +218,15 @@ public class Dogpound extends JPanel implements ActionListener {
 		for (Food f : food) {
 
 			if ((x[0] == f.food_x) && (y[0] == f.food_y)) {
+		     	Shit eat;
+				locateFood();
 
 			}
 		}
 
 	}
+	
+	
+	
 
 }
