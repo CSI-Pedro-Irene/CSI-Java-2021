@@ -12,6 +12,7 @@ public class Dog extends JPanel {
 	Boolean wild = true;
 	boolean gender = true; // true = male
 	ImageIcon icon;
+	ImageIcon shit;
 //	Constructors
 	public Dog() {
 		super();
@@ -65,7 +66,7 @@ public class Dog extends JPanel {
 		int size;
 		boolean smelly;
 		String color;
-
+		public ImageIcon shit = new ImageIcon(new ImageIcon(getClass().getResource("Shit.jpg")).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
 		public Shit(boolean smelly, int size, String color) {
 			super();
 			this.size = size;

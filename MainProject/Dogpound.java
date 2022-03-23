@@ -31,7 +31,7 @@ public class Dogpound extends JPanel implements ActionListener {
 	private int B_HEIGHT = 700;
 	private final int DOG_SIZE = 20;
 	private final int ALL_DOGS = 120;
-//	private boolean inGame = true;
+
 	private final int x[] = new int[ALL_DOGS];
 	private final int y[] = new int[ALL_DOGS];
 	Random random;
@@ -40,7 +40,7 @@ public class Dogpound extends JPanel implements ActionListener {
 	private boolean rightDirection = true;
 	private boolean upDirection = false;
 	private boolean downDirection = false;
-//	private boolean isRunning = true;
+
 
 	private final int DELAY = 100;
 	private Timer timer;

@@ -28,28 +28,13 @@ class Dog{
 
 <br>
 
-### `Husky.java`
+### `GermanShepherd.java`
 ```java
-class Husky extends Dog{
+class GermanShepherd extends Dog{
 // Includes everything defined in Dog
 
 }
 ```
-<br>
-
-`Husky`'s constructor should call `Dog`'s constructor. This is done by using `super()`
-
-```java
-...
-public Husky() {
-        // Replace dots with actual arguments. 
-        super(...);
-		
-}
-...
-```
-
-<br>
 
 ### Overriding
 On occasions you will want to make modifications to a method that has already been defined in the super class. When attempting to do, you will notice an error. This is because the compiler does not know which version to use. For this reason we will use an `@Override` tag above the method we want to use as a replacement.
@@ -57,7 +42,7 @@ On occasions you will want to make modifications to a method that has already be
 <br>
 
 ```java
-class Husky extends Dog{
+class GermanShepherd extends Dog{
 
         @Override
         public void piss(){} 
@@ -67,11 +52,6 @@ class Husky extends Dog{
 
 
 <br>
-
-## [The-Simulation corresponds to this lecture. ->](/../../tree/main/Projects/The-Simulation/The-Simulation.md)
-
-<br>
-
 
 # Class Discussion
 ## Answer the questions on the Markdown file located within your `Module9` directory (Module9.md).`(0pts)`
