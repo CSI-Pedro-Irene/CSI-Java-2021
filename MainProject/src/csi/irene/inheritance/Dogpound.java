@@ -29,9 +29,11 @@ public class Dogpound extends JPanel implements ActionListener {
 	private int corgi;
 	private int B_WIDTH = 700;
 	private int B_HEIGHT = 700;
-	private final int DOG_SIZE = 20;
-	private final int ALL_DOGS = 120;
-//	private boolean inGame = true;
+	private final int DOG_SPEED = 40;
+	private final int ALL_DOGS = 100;
+
+	
+
 	private final int x[] = new int[ALL_DOGS];
 	private final int y[] = new int[ALL_DOGS];
 	Random random;
@@ -40,7 +42,7 @@ public class Dogpound extends JPanel implements ActionListener {
 	private boolean rightDirection = true;
 	private boolean upDirection = false;
 	private boolean downDirection = false;
-//	private boolean isRunning = true;
+
 
 	private final int DELAY = 100;
 	private Timer timer;
@@ -74,6 +76,8 @@ public class Dogpound extends JPanel implements ActionListener {
 			x[z] = 50 - z * 10;
 			y[z] = 50;
 		}
+		
+		locateFood();
 		timer = new Timer(DELAY, this);
 		timer.start();
 
@@ -87,19 +91,19 @@ public class Dogpound extends JPanel implements ActionListener {
 		}
 
 		if (leftDirection) {
-			x[0] -= DOG_SIZE;
+			x[0] -= DOG_SPEED;
 		}
 
 		if (rightDirection) {
-			x[0] += DOG_SIZE;
+			x[0] += DOG_SPEED;
 		}
 
 		if (upDirection) {
-			y[0] -= DOG_SIZE;
+			y[0] -= DOG_SPEED;
 		}
 
 		if (downDirection) {
-			y[0] += DOG_SIZE;
+			y[0] += DOG_SPEED;
 		}
 
 		count++;
@@ -120,7 +124,6 @@ public class Dogpound extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-//		super.paintComponent(g);
 
 		doDrawing(g);
 
@@ -191,10 +194,9 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		checkCollision();
 		move();
-		findFood();
 		if(food.size()<40) {
 			locateFood();
-			
+			findFood();
 		}
 
 		repaint();
@@ -206,7 +208,6 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		int food_x = rd.nextInt(B_WIDTH/20)*20;
 
-
 		int food_y = rd.nextInt(B_HEIGHT/20)*20;
 
 		food.add(new Dog().new Food(food_x, food_y));
@@ -217,19 +218,18 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		for (Food f : food) {
 
-			if ((x[0] == f.food_x) && (y[0] == f.food_y)) {
-		     	
-				locateFood();
+			if(( x[0] == f.food_x) && (y[0] == f.food_y)) {
+				
 				System.out.println("Collision");
+				locateFood();
 				dog.get(0).eat(f);
 				
 
 			}
 		}
 
+	
 	}
-	
-	
 	
 
 }
