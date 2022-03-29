@@ -29,7 +29,7 @@ public class Dogpound extends JPanel implements ActionListener {
 	private int corgi;
 	private int B_WIDTH = 700;
 	private int B_HEIGHT = 700;
-	private final int DOG_SPEED = 40;
+	private final int DOG_SPEED =10;
 	private final int ALL_DOGS = 100;
 
 	
@@ -110,9 +110,9 @@ public class Dogpound extends JPanel implements ActionListener {
 		Random rd = new Random();
 		Random rand = new Random();
 
-		int randomNum = rand.nextInt((40 - 2) + 1) + 3;
+		int randomNum = rand.nextInt((50 - 1) + 1) + 1;
 
-		if (count % randomNum == 2) {
+		if (count % randomNum == 1) {
 			upDirection = rd.nextBoolean();
 			rightDirection = rd.nextBoolean();
 			leftDirection = rd.nextBoolean();
@@ -194,11 +194,12 @@ public class Dogpound extends JPanel implements ActionListener {
 
 		checkCollision();
 		move();
+		
 		if(food.size()<40) {
 			locateFood();
-			findFood();
 		}
-
+		
+		findFood();
 		repaint();
 	}
 
@@ -206,9 +207,11 @@ public class Dogpound extends JPanel implements ActionListener {
 		Random rd = new Random();
 
 
-		int food_x = rd.nextInt(B_WIDTH/20)*20;
+		int b = (int) (Math.random() * 50);
+        int food_x = ((b * DOG_SPEED));
 
-		int food_y = rd.nextInt(B_HEIGHT/20)*20;
+        b = (int) (Math.random() * 50);
+        int food_y = ((b * DOG_SPEED));
 
 		food.add(new Dog().new Food(food_x, food_y));
 
@@ -221,8 +224,18 @@ public class Dogpound extends JPanel implements ActionListener {
 			if(( x[0] == f.food_x) && (y[0] == f.food_y)) {
 				
 				System.out.println("Collision");
-				locateFood();
+//				locateFood();
 				dog.get(0).eat(f);
+				
+				int b = (int) (Math.random() * 50);
+		        int food_x = ((b * DOG_SPEED));
+
+		        b = (int) (Math.random() * 50);
+		        int food_y = ((b * DOG_SPEED));
+				
+				f.food_x = food_x;
+
+				f.food_y = food_y;
 				
 
 			}

@@ -67,6 +67,7 @@ public class Dog extends JPanel {
 		boolean smelly;
 		String color;
 		public ImageIcon shit = new ImageIcon(new ImageIcon(getClass().getResource("Shit.jpg")).getImage().getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH));
+		
 		public Shit(boolean smelly, int size, String color) {
 			super();
 			this.size = size;
